@@ -1,0 +1,94 @@
+
+# Spectre Encoding System 
+
+## Purpose:
+The Spectre Encoding system is designed to encode hidden messages using zero-width characters in a way that is stealthy and robust. This document explains the encoding and decoding processes in full, including the Spectre Encoding Table.
+
+---
+
+## Spectre Encoding Overview:
+
+1. **Encoding Format**:
+   - Each plaintext character is represented by a **quad** in the form of `xccc`:
+     - `x`: A random zero-width character (noise character) chosen from the following set:
+       - ​ (Zero-Width Space) U+200B
+       - ‌ (Zero-Width Non-Joiner) U+200C 
+       - ‍ (Zero-Width Joiner) U+200D
+       - ﻿ (Zero-Width No-Break Space) U+FEFF
+       - ⁠ (Word Joiner) U+2060
+     - `ccc`: A triplet of zero-width characters representing the plaintext character, as per the Spectre Encoding Table.
+
+2. **Encoding Process**:
+   - For each plaintext character:
+     - Select a random `x` from the zero-width set.
+     - Retrieve the corresponding `ccc` from the Spectre Encoding Table.
+     - Combine `x` and `ccc` to form the quad (`xccc`).
+   - Combine all quads to form the encoded message.
+
+3. **Decoding Process**:
+   - Parse the encoded message into quads of length 4.
+   - Ignore the first character (`x`) in each quad.
+   - Map the remaining triplet (`ccc`) back to its corresponding plaintext character using the Spectre Encoding Table.
+   - Combine the plaintext characters to retrieve the original message.
+
+---
+
+## Spectre Encoding Table:
+Here is the full mapping of plaintext characters to their corresponding triplets (`ccc`):
+
+| Plaintext | Encoding (`ccc`)          |
+|-----------|----------------------------|
+| `a`       | ‌﻿‌        |
+| `b`       | ⁠‌﻿        |
+| `c`       | ﻿﻿⁠        |
+| `d`       | ﻿‍‌        |
+| `e`       | ‍​‍        |
+| `f`       | ‍​‌        |
+| `g`       | ​‍‍        |
+| `h`       | ﻿‌‌        |
+| `i`       | ‌​‌        |
+| `j`       | ‌⁠﻿        |
+| `k`       | ‍﻿‍        |
+| `l`       | ⁠‍‌        |
+| `m`       | ⁠﻿​        |
+| `n`       | ﻿﻿‌        |
+| `o`       | ‌‌‍        |
+| `p`       | ﻿​‍        |
+| `q`       | ⁠​‌        |
+| `r`       | ​​⁠        |
+| `s`       | ‌﻿﻿        |
+| `t`       | ​‌⁠        |
+| `u`       | ​‍​        |
+| `v`       | ​‌‌        |
+| `w`       | ​‌﻿        |
+| `x`       | ‌‍﻿        |
+| `y`       | ⁠​﻿        |
+| `z`       | ‌﻿​        |
+| `0`       | ​⁠‍        |
+| `1`       | ⁠‌⁠        |
+| `2`       | ‍‍‍        |
+| `3`       | ‌‍‌        |
+| `4`       | ﻿​⁠        |
+| `5`       | ‌⁠‍        |
+| `6`       | ‍‌﻿        |
+| `7`       | ﻿‌​        |
+| `8`       | ﻿⁠‍        |
+| `9`       | ​‌‍        |
+| `.`       | ‍﻿​        |
+| `,`       | ‍﻿‌        |
+| `/`       | ‌﻿⁠        |
+| `:`       | ﻿​​        |
+| `'`       | ‍﻿﻿        |
+| `!`       | ‍‍﻿        |
+| `@`       | ‌​​        |
+| `$`       | ‍‌‍        |
+| `=`       | ​⁠​        |
+| `-`       | ﻿⁠⁠        |
+| `?`       | ﻿⁠​        |
+
+---
+
+## General Notes:
+- The Spectre Encoding system is stealthy and relies on zero-width characters for invisibility in most text editors.
+- Noise characters (`x`) add obfuscation, making the encoding harder to detect or reverse-engineer.
+- Ensure strict adherence to this table for encoding and decoding processes.
