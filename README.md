@@ -11,7 +11,7 @@
 
 ## How to Use
 ### Encoding a Message
-1. Upload the four `.txt` instruction files into a ChatGPT-4o conversation or a **Project Space** (recommended).
+1. Upload the four `.txt` instruction files into a ChatGPT-4o conversation or **Project Space** (recommended).
 2. Ask the assistant to write a letter. It will ask:
    - Who is the letter for?
    - What is the occasion?
@@ -27,7 +27,7 @@
 ---
 
 ### Decoding a Message
-1. Upload a Spectre-encoded `.docx` file.
+1. Upload a Spectre-encoded `.docx` file to a ChatGPT-4o conversation or **Project Space** that has been Spectre-enabled.
 2. Provide the decoding password:
    ```
    NationalAcrobat
@@ -44,4 +44,4 @@
 4. **Detectability**: Anyone who knows what zero-width characters are—and how to extract them—can find the existence of the message.
 
 ## Final Note
-This project is about exploring the boundaries of Prompt Engineering and AI-based covert communications, not creating a foolproof realworld ready system. 
+This project is about exploring and bending the boundaries of Prompt Engineering and AI-based covert communications, not creating a foolproof realworld ready system. 
