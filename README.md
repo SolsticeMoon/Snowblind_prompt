@@ -1,6 +1,6 @@
 # Spectre Steganography System
 
-**Spectre** is a zero-width character steganography system that embeds hidden messages into `.docx` files using ChatGPT-4o. It automates the generation of cover text, message encoding, and decoding—all using prompt engineering, not code.
+**Spectre** is a zero-width character steganography system that embeds hidden messages into `.docx` files using ChatGPT-4o or o3. It automates the generation of cover text, message encoding, and decoding—all using prompt engineering, not code.
 
 **Why the name "Spectre"?** ChatGPT suggested it after hearing the concept.
 
@@ -38,7 +38,7 @@
 
 ## Limitations
 
-1. **Model compatibility**: Currently works best with **ChatGPT-4o**. Older GPT models and other LLMs (e.g., Claude, Gemini) often fail or ignore instructions.
+1. **Model compatibility**: Currently works best with **ChatGPT-4o**. Older GPT models and other LLMs (e.g., Claude, Gemini) often fail or ignore instructions. UPDATE: ChatGPT-o3 handles the instructions extremely well
 2. **Not encryption**: This is pure steganography. No cryptographic strength—just secrecy through invisibility, a human with basic knowledge of cyphers can decode the messages with a moderate sample size and a few hours.
 3. **LLM instability**: LLMs are frequently updated. What works today might break tomorrow. Your mileage will vary. Future projects will attempt to address this.
 4. **Detectability**: Anyone who knows what zero-width characters are—and how to extract them—can find the existence of the message.
