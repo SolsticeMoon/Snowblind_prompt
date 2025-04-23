@@ -13,6 +13,7 @@
 - Each character of your secret message is encoded using 'invisible' **zero-width Unicode characters**.
 - These encoded sequences are embedded into the cover letter (typically after the first paragraph) to minimise visual disruption.
 - Messages are only accessible with the correct **encode or decode password**.
+- Passwords can be changed by editing the values in the `passwords:` block (`encode:` / `decode:`), save, then upload the modified file;
 
 ## Why .docx files?
 - ChatGPT conversation text is piped through several layers — tokeniser, markdown renderer, browser UI, etc. Any of these can strip or mangle zero‑width characters. On the other hand when asked to create a .docx ChatGPT writes zero‑width characters straight into the document XML during generation. Mainstream `.docx` viewers keep those characters intact and render them invisibly, so the payload travels safely and remains unseen to casual readers.
